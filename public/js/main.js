@@ -298,7 +298,7 @@ socket.on('game_update', function(payload){
 
         }
       }}(payload.game.last_move_time)
-    }, 1000);
+    , 1000);
     /*animate changes to the board*/
 
     var blacksum = 0;
