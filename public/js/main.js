@@ -316,6 +316,8 @@ socket.on('game_update', function(payload){
 
         /*IF a board space has changed*/
         if(old_board[row][column] != board[row][column]){
+          var d = new Date();
+          var t = d.getTime();
           if(old_board[row][column] == '?' && board[row][column] == ' '){
             $('#'+row+'_'+column).html('<img src="assets/images/empty.gif"/>');
           }
@@ -338,10 +340,10 @@ socket.on('game_update', function(payload){
             $('#'+row+'_'+column).html('<img src="assets/images/black_to_empty.gif"/>');
           }
           else if(old_board[row][column] == 'w' && board[row][column] == 'b'){
-            $('#'+row+'_'+column).html('<img src="assets/images/white_to_black.gif"/>');
+            $('#'+row+'_'+column).html('<img src="assets/images/white_to_black.gif?'+t+'"/>');
           }
           else if(old_board[row][column] == 'b' && board[row][column] == 'w'){
-            $('#'+row+'_'+column).html('<img src="assets/images/black_to_white.gif"/>');
+            $('#'+row+'_'+column).html('<img src="assets/images/black_to_white.gif?'+t+'"/>');
           }
           else{
             $('#'+row+'_'+column).html('<img src="assets/images/error.gif"/>');
