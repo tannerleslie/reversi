@@ -20,6 +20,11 @@ table#game_board td{
   margin: 0px;
 }
 
+td.hovered_over{
+  background: url('../images/possible.png');
+  background-size: 100% 100%;
+}
+
 td.hovered_over:hover{
   background: url('../images/hover.gif');
   background-size: 100% 100%;
